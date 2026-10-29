@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文方法溯源"
+  short_description: "跨领域追查理论、概念、研究设计、协议、量表或算法的来源，核对前作关系并保留双侧证据"
+  default_prompt: "用 $paper-reading-lineage 追查这篇论文的方法来源，核对关键前作，说明继承了什么、改了什么，并给出双侧出处。"

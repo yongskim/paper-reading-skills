@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文速读"
+  short_description: "跨领域按实际研究类型速读论文，讲清叙事、问题和发现，整理有出处的简短思源事实笔记"
+  default_prompt: "用 $paper-reading-skim 速读这篇论文，一句话总结后梳理叙事脉络，按七部分整理思源事实笔记。"

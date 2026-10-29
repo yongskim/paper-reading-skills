@@ -1,0 +1,22 @@
+# Private runtime configuration and credentials
+*.local.json
+*.private.json
+.paper-reading/
+.env
+.env.*
+!.env.example
+
+# Generated content and caches
+work/
+outputs/
+__pycache__/
+*.pyc
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.sy
+*.pdf
+*.zip
+.DS_Store
+Thumbs.db

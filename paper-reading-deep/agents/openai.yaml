@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文精读"
+  short_description: "跨领域适配实验、实证、定性、方法、综述与理论等研究，精读设计、来源及证据并整理笔记"
+  default_prompt: "用 $paper-reading-deep 按这篇论文的实际类型整理深入笔记，讲清叙事、研究设计、来源与证据，使用思源格式。"

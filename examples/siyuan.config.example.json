@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "base_url_hint": null,
+  "token_env": "SIYUAN_API_TOKEN",
+  "notebook_id": null,
+  "root_doc_id": null,
+  "root_title": null,
+  "domains": {},
+  "default_domain": null,
+  "allow_new_domains": true,
+  "destination_policy": "ask_domain_and_path_unless_user_specified",
+  "auto_classify_destination": false,
+  "cover_mode": "pdf_first_page",
+  "gallery_placement": "each_user_selected_parent",
+  "field_policy": {
+    "mode": "common_plus_domain_extensions",
+    "preserve_existing_fields": true,
+    "code_fields": "optional_when_relevant"
+  },
+  "pdf": {
+    "preferred_extractor": "auto",
+    "wrapper_path": null,
+    "backend": null
+  }
+}
