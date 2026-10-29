@@ -5,7 +5,7 @@ description: "跨领域追查研究方法、理论框架、概念、协议、量
 
 # 论文方法溯源
 
-讲清方法来自哪里、作者实际沿用或改变了什么。可独立调用，也可作为 L2 精读第 6 部分的专项模块。遵从 [阅读与证据规则](../paper-reading/references/reading-rules.md)、[笔记约定](../paper-reading/references/note-format.md) 和 [思源格式](../paper-reading/references/siyuan-format.md)。用户要求关联 Zotero/思源时再读 [联动规则](../paper-reading/references/zotero-siyuan.md)。
+讲清方法来自哪里、作者实际沿用或改变了什么。可独立调用，也可作为精读第 6 部分的专项模块。遵从 [阅读与证据规则](../paper-reading/references/reading-rules.md)、[笔记约定](../paper-reading/references/note-format.md) 和 [思源格式](../paper-reading/references/siyuan-format.md)。用户要求关联 Zotero/思源时再读 [联动规则](../paper-reading/references/zotero-siyuan.md)。
 
 ## 建立待核查组件
 

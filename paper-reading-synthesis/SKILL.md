@@ -1,13 +1,13 @@
 ---
 name: paper-reading-synthesis
-description: "归并论文阅读笔记中的客观事实、出处、已报告局限和用户已有想法，生成便于导入思源和检索的 L3 事实归档。支持单篇或用户提供的多篇笔记；不主动生成研究启发、评价、反例或新研究方案。"
+description: "整理已有论文笔记中的客观事实、出处、已报告局限和用户批注，支持单篇或用户提供的多篇笔记。不主动生成研究启发、评价、反例或新方案，也不将笔记整理视为已精读或已入库。"
 ---
 
-# L3 论文事实归档
+# 已有论文笔记整理
 
 可直接调用。先读 [阅读与证据规则](../paper-reading/references/reading-rules.md)、[笔记约定](../paper-reading/references/note-format.md) 和 [思源格式](../paper-reading/references/siyuan-format.md)。
 
-这里的 synthesis 指已有材料的整理和关联，默认不替用户完成研究思考。优先复用原文与核对过的笔记；只有旧笔记时可以做笔记级归档，但标明未复核原文，不提升其证据状态。不要求先生成 L1/L2 产物。
+这里的 synthesis 指已有材料的整理和关联，默认不替用户完成研究思考，也不是粗读与入库之间必经的额外阶段。优先复用原文与核对过的笔记；只有旧笔记时可以做笔记级整理，但标明未复核原文，不提升其证据状态。不要求先生成粗读或精读产物。
 
 用户要求应用联动时再读 [Zotero 与思源联动](../paper-reading/references/zotero-siyuan.md)。整理叙事时读取 [叙事脉络规则](../paper-reading/references/narrative-flow.md)。
 

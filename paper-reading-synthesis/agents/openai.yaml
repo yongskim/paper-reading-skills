@@ -1,4 +1,4 @@
 interface:
-  display_name: "论文事实归档"
+  display_name: "已有论文笔记整理"
   short_description: "归并论文事实、叙事、来源和用户批注，保留证据边界，可关联 Zotero 条目和思源文献索引"
   default_prompt: "用 $paper-reading-synthesis 归并已有论文事实、叙事脉络和我的批注，保留来源与链接，不扩展研究设想。"

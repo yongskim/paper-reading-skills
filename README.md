@@ -1,23 +1,43 @@
 # Paper Reading Skills
 
-跨领域论文阅读技能：讲清叙事、研究问题、核心认识、研究设计、来源与证据，保留读者自己的研究思考。可仅生成 Markdown，也可选用 Zotero 与思源集成。
+**先粗读了解论文，感兴趣后入库并补充精读笔记。** 跨领域适用，默认中文，支持 Zotero 与思源 PDF 首页画廊。
 
-Cross-domain paper-reading skills for Codex, with evidence-grounded Chinese notes, research lineage checks, and optional Zotero / SiYuan archiving.
+Cross-domain paper reading for Codex: skim first, then save with detailed notes when requested.
 
-## 技能
+## 日常只用两句话
 
-| 技能 | 用途 |
-| --- | --- |
-| [paper-reading](paper-reading/SKILL.md) | 总入口，选择阅读深度、研究类型和交付方式 |
-| [paper-reading-skim](paper-reading-skim/SKILL.md) | 速读与简短事实笔记 |
-| [paper-reading-deep](paper-reading-deep/SKILL.md) | 按实际研究类型精读 |
-| [paper-reading-lineage](paper-reading-lineage/SKILL.md) | 方法、理论、设计或材料的来源追查 |
-| [paper-reading-synthesis](paper-reading-synthesis/SKILL.md) | 整理已有事实、出处和个人批注 |
-| [paper-reading-archive](paper-reading-archive/SKILL.md) | 在用户指定目录关联思源画廊、索引与子文档 |
+### 1. 粗读这篇
 
-## 安装
+上传 PDF、给论文链接，或指定 Zotero 中的论文：
 
-下载仓库 ZIP 并解压，或克隆本仓库。在仓库根目录运行以下命令，需要 Python 3.10 或以上，无第三方依赖：
+```text
+用 $paper-reading 粗读这篇论文。
+```
+
+得到约 2–3 分钟可读完的概览：一句话总结、叙事脉络、研究问题、核心认识、研究做法与主要结果。结构随论文类型调整，以事实和证据为主。此时只在聊天中呈现，不问归档目录、不创建思源记录。
+
+### 2. 入库并精读
+
+觉得值得保留，就在同一对话里继续说：
+
+```text
+这篇入库并精读，放到「我的文献库 / 某领域 / 某主题」。
+```
+
+代理沿用刚才的论文和有效提取结果，完成：
+
+- 补读关键内容，写清机制或研究设计、条件、关键证据，并核对实质方法或研究设计的来源。
+- 在你指定的目录创建或更新论文子文档，写入完整精读笔记，保留已有批注。
+- 添加 PDF 首页画廊卡片，填写关键词、年份、研究类型等字段；代码等字段按领域适用性处理。
+- 在分类页添加文字索引，画廊和索引都指向同一篇子文档；Zotero 已有对应条目时关联原文。
+
+没说目录时，只需补充要放的位置。你不用再次指定模板或调用其他子技能，也不用重发仍可访问的原文。连接与目标已明确时直接执行；完成后给笔记入口，并说明实际完成情况。
+
+可以跳过粗读，直接要求「用 $paper-reading 入库并精读这篇，放到……」。需要精读但暂不保存时，说「只精读，不入库」。仅说“感兴趣”不会自动写入。
+
+## 安装一次
+
+需要 Python 3.10 或以上，无第三方 Python 依赖：
 
 ```bash
 git clone https://github.com/yongskim/paper-reading-skills.git
@@ -26,65 +46,64 @@ python scripts/install.py --dry-run
 python scripts/install.py
 ```
 
-默认安装到 `$CODEX_HOME/skills`；未设置 `CODEX_HOME` 时使用 `~/.codex/skills`。也可指定当前环境的技能目录：
+默认安装到 `$CODEX_HOME/skills`；未设置时使用 `~/.codex/skills`。其他技能目录可用 `--dest <skills-directory>` 指定。安装后开启新会话，或按客户端提供的方式刷新技能。
 
-```bash
-python scripts/install.py --dest <skills-directory>
-```
+已有同名技能时，脚本在写入前停止。检查差异并备份自己的改动后，用 `python scripts/install.py --update` 更新；它覆盖同名文件并保留其他文件，不清理旧文件。
 
-已有同名技能时，脚本会在写入前停止。检查差异并备份自己的改动后，可用 `--update` 更新六个技能；更新采用合并复制，会覆盖同名文件并保留其他文件，不会清理旧文件。
+没有 Python 时，手动复制下方表中的六个技能文件夹到技能目录，保持为同级文件夹。不要只复制入口 `SKILL.md`。
 
-没有 Python 时，手动复制表中的六个技能文件夹到当前环境支持的技能目录，保持为同级文件夹。不要只复制入口 `SKILL.md`。其他目录及根目录文档是发布资料，不必安装。安装后开启新会话，或按客户端提供的方式刷新技能。
+## 按需连接应用
 
-## 使用示例
+**只粗读：** 提供可读原文即可，不要求 Zotero 或思源。
 
-> 用 $paper-reading 阅读这篇论文，只输出 Markdown，不入库。
+**入库并精读：** 提供可用的思源 API 或连接器，并明确目标文献库。需要关联 Zotero 时提供对应连接。新用户可让代理“检查思源和 Zotero 连接，帮我配置本地论文库”，再选择自己的根目录。
 
-> 用 $paper-reading-deep 精读这篇定性研究，解释材料选择、分析过程与证据。
+个人配置保存在发布源码之外；可从 [空白示例](examples/siyuan.config.example.json) 复制。配置发现顺序与字段见 [运行配置说明](paper-reading/references/runtime-configuration.md)。密钥交给已连接工具或环境变量，不写进 skill 或示例。
 
-> 用 $paper-reading-lineage 对照核心设计与前作，说明沿用和改动。
+PDF 遵从活动工作区的提取规则；不要求固定安装 MinerU，不假设软件路径或硬件。没有所需连接时可继续交付 Markdown，并说明尚未完成的归档步骤。
 
-> 用 $paper-reading-archive 放入我指定的目录；没指定时先问我。
+本仓库提供代理指令、模板和安装工具。应用操作依赖当前环境可用的工具，不会自行安装插件，也没有后台同步服务。输入只有外部 PDF 时，不自动导入 Zotero。现成工具与联动边界见 [Zotero / 思源联动](paper-reading/references/zotero-siyuan.md) 和 [画廊工作流](paper-reading/references/gallery-workflow.md)。
 
-领域、研究类型和归档目录分别处理；新领域不必复制旧分类树。默认保留一句话总结与叙事脉络，其余研究内容按实际类型展开。
+## 内容约定
 
-阅读深度和内容模块可以组合：L1 速读建立轮廓，L2 精读讲清机制或研究设计，L3 整理已有事实。也可单独要求“只讲叙事”“只核对实验结果”或“追查这个设计的前作”，无需逐层执行。
+论文按实际研究类型阅读：方法讲机制，实证讲测量，定性研究讲材料与分析过程，Benchmark 讲数据和评估协议，综述讲范围与分类，理论讲定义与证明。领域和论文类型不会替你决定存放目录。
 
-## 笔记包含什么
+区分作者主张、证据支持和阅读解释，保留 Section、Figure、Table、Equation 等定位。默认不生成研究方案、审稿式评分或替读者回答思考题。精读来源追查需要对照本文与前作，不能仅凭相似认定继承。
 
-默认中文，保留关键英文术语，并尽可能标注 Section、Figure、Table、Equation 或页码。
+<details>
+<summary>精读笔记结构与思源公式</summary>
 
-1. **一句话总结**：研究问题、核心思想与主要结果。
-2. **叙事脉络**：论文先提出什么、怎样验证、随后如何推进论证。
-3. **问题与动机**：研究问题、已有处理方式与研究缺口。
-4. **核心认识与发现**：区分观察、Insight、假设和具体方案。
-5. **问题定义与适用条件**：输入输出、关键约束、研究范围及假设。
-6. **研究设计与技术内容**：按类型解释机制、测量、协议、材料或证明。
-7. **证据与主要发现**：保留关键数字、条件与来源，区分主张和已支持的结论。
+完整笔记约 5–10 分钟可读完，复杂核心内容可展开：
 
-这七项是阅读功能，实际标题随论文变化。方法论文讲机制与目标函数；实证研究讲变量、采样与测量；定性研究讲材料和分析过程；Benchmark 讲数据构建和评估协议；综述讲范围与分类；理论研究讲定义、命题和证明。不强行要求算法或消融。
+1. 一句话总结。
+2. 叙事脉络，紧接总结。
+3. 问题与动机。
+4. 核心认识与发现。
+5. 问题定义与适用条件。
+6. 研究设计与技术内容，包括相关来源。
+7. 证据与主要发现。
 
-来源追查对照本文与前作的原文，说明沿用、组合和修改，区分作者明确说明的继承与待核实的关系。默认不追加审稿式评分、研究方案或完整思考题答案。
+这些是阅读功能，实际标题按论文类型调整。笔记采用思源兼容 Markdown：行内公式用 `$...$`，独立公式用各自占一行的 `$$`，多行公式使用 `aligned`。见 [笔记模板](paper-reading/assets/siyuan-note-template.md) 与 [思源格式](paper-reading/references/siyuan-format.md)。
 
-笔记使用思源兼容 Markdown：行内公式用 `$...$`，独立公式用各自占一行的 `$$`，多行公式使用 `aligned`。见 [笔记模板](paper-reading/assets/siyuan-note-template.md) 与 [思源格式](paper-reading/references/siyuan-format.md)。
+</details>
 
-## 可选集成与本地配置
+<details>
+<summary>内部技能与单独调用</summary>
 
-基础阅读只要求可用原文和相应提取工具，不要求 Zotero、思源或 MinerU。PDF 遵从当前工作区规则，配置了 wrapper 才调用该 wrapper；软件位置、后端与硬件由运行环境决定，不自动安装。
+日常只需使用 `$paper-reading`。以下模块由总入口按需调用，也支持单独处理局部任务：
 
-Zotero 和思源仅在请求集成时使用。缺少连接时仍可生成 Markdown，不能声称已完成入库或同步。具体工具及应用版本需要实际核对。
+| 技能 | 用途 |
+| --- | --- |
+| [paper-reading](paper-reading/SKILL.md) | 粗读 → 用户决定 → 入库并精读 |
+| [paper-reading-skim](paper-reading-skim/SKILL.md) | 简短概览 |
+| [paper-reading-deep](paper-reading-deep/SKILL.md) | 深入解释研究设计与证据 |
+| [paper-reading-lineage](paper-reading-lineage/SKILL.md) | 方法、理论、设计或材料的来源追查 |
+| [paper-reading-synthesis](paper-reading-synthesis/SKILL.md) | 整理已有事实、出处和用户批注 |
+| [paper-reading-archive](paper-reading-archive/SKILL.md) | 思源画廊、索引与子文档归档 |
 
-配置可以省略。需要时将 [空白示例](examples/siyuan.config.example.json) 复制到发布源码之外的本地文件，填入自己的连接和真实 ID。配置发现顺序与字段见 [运行配置说明](paper-reading/references/runtime-configuration.md)。密钥使用已连接工具或环境变量，不写进 skill 或示例。
+例如：“用 $paper-reading 只解释评估协议”或“用 $paper-reading-lineage 追查这个设计的前作”。无需依次运行所有模块。
 
-思源归档由用户指定领域和父目录，目录未知时先问。每个选定分类页可使用 PDF 首页作为卡片封面，并关联同一篇子文档和文字索引。常用字段包括标题、年份、研究类型、关键词、阅读状态、论文链接、Zotero 链接、代码状态及代码地址；字段可按领域扩展。标题、数据库和关联 ID 从实际实例读取，不写死在技能里。
-
-这些步骤由代理调用当前可用的 API、连接器或工具完成。仓库没有内置同步守护进程、PDF 提取器或思源插件，也不会自行安装它们。集成规则与可复用工具见 [Zotero / 思源联动](paper-reading/references/zotero-siyuan.md) 和 [画廊工作流](paper-reading/references/gallery-workflow.md)。
-
-## 发布边界
-
-这里只包含通用技能、模板、说明和空白示例。个人配置、文档/数据库 ID、路径、论文、笔记、缩略图与日志保留在仓库之外；.gitignore 是补充保护，发布前仍需检查文件。
-
-这是代理指令集合，不是独立同步服务。源码检查不代表已在所有系统和应用版本完成端到端验证。
+</details>
 
 ## 验证与贡献
 
@@ -93,10 +112,10 @@ python scripts/validate.py
 python -m unittest discover -s tests -v
 ```
 
-检查覆盖技能基础结构、相对链接、常见隐私泄露特征，以及临时目录中的安装与迁移。GitHub Actions 在 Windows 和 Linux 上运行同样的检查。真实论文的事实准确性、PDF 提取质量、应用兼容性和画廊写入需在使用环境中核验。
+检查覆盖技能基础结构、相对链接、常见隐私泄露特征，以及临时目录中的安装与迁移。GitHub Actions 在 Windows 和 Linux 上运行同样的检查。事实准确性、PDF 提取和应用写入需在使用环境中核验；源码检查不代表端到端论文归档已验证。
 
-欢迎通过 Issue 或 PR 提供脱敏后的复现信息。参见 [贡献说明](CONTRIBUTING.md)。
+请勿提交本机路径、个人配置、真实文档/数据库 ID、令牌、论文全文、私人笔记或生成内容。欢迎提供脱敏后的 Issue 和 PR，参见 [贡献说明](CONTRIBUTING.md)。
 
 ## 许可证
 
-[MIT](LICENSE)。该许可证适用于本仓库的原创技能指令、模板和代码，不改变论文原文、第三方软件或其他外部材料的权利。
+[MIT](LICENSE)。适用于本仓库的原创技能指令、模板和代码，不改变外部论文或第三方软件的权利。

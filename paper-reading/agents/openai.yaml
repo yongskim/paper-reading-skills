@@ -1,4 +1,4 @@
 interface:
   display_name: "论文阅读"
-  short_description: "跨领域、按研究类型阅读论文，支持多领域目录与按需字段，关联首页画廊、索引及子文档"
-  default_prompt: "用 $paper-reading 阅读这篇论文，按实际类型整理笔记；入库前先问我目录，再关联 PDF 首页画廊、索引和子文档。"
+  short_description: "先粗读了解论文，感兴趣后入库并精读，关联思源首页画廊、索引及子文档"
+  default_prompt: "用 $paper-reading 粗读这篇论文，让我了解问题、叙事、核心认识和主要结果，暂不入库。"

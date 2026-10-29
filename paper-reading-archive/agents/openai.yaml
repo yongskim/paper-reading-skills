@@ -1,4 +1,4 @@
 interface:
   display_name: "论文画廊归档"
-  short_description: "在用户指定的领域或新方向归档论文，支持按需目录与字段，关联首页画廊、索引及子文档"
-  default_prompt: "用 $paper-reading-archive 将这篇论文归档到思源，先问我放到哪个目录，生成首页画廊卡片、索引和子文档笔记。"
+  short_description: "收录论文并补充精读笔记，在用户指定目录关联 PDF 首页画廊、文字索引和同一篇子文档"
+  default_prompt: "用 $paper-reading-archive 入库并精读这篇论文，目录未指定时先问我，关联 PDF 首页画廊、索引和精读子文档。"
